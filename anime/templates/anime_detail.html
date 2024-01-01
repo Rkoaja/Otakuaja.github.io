@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="detail">
+  <div class="anime-img">
+    <img src="{{ anime.image.url }}" alt="{{ anime.title }} Image" width="200">
+  </div>
+  <div class="anime-detail">
+    <p><strong>Judul</strong> : {{ anime.title }}<br>
+      <strong>Skor</strong> : {{ anime.rating }}<br>
+      <strong>Produser</strong> : {{ anime.produser }}<br>
+      <strong>Tipe</strong> : {{ anime.tipe }}<br>
+      <strong>Status</strong> : {{ anime.status }}<br>
+      <strong>Total Episode</strong> : {{ anime.episode }}<br>
+      <strong>Durasi</strong> : {{ anime.duration }}<br>
+      <strong>Tanggal Rilis</strong> : {{ anime.release_date }}<br>
+      <strong>Studio</strong> : {{ anime.studio }}<br>
+      <strong>Genre</strong> : {{ anime.genre }}
+    </p>
+  </div>
+</div>
+
+<div class="anime-episode">
+  <h5>{{ anime.title}} Batch</h5>
+  <h5 style="margin-top: 7px;">{{ anime.title}} Episode List <span>(link Download Episode + Streaming)</span></h5>
+
+  <!-- Perulangan episode dengan background sesuai pengulangan Genap atau Ganjil -->
+  {% for episode_number in "1"|rjust:anime.episode %}
+  <p class="{% cycle 'even' 'odd' %}">
+    <a href="#">{{ anime.title }} Episode {{ forloop.counter }}</a>
+  </p>
+  {% endfor %}
+
+  <h5 style="margin-top: 15px;">{{ anime.title}} Lengkap <span>(link Download Episode + Batch)</span></h5>
+</div>
+
+<div class="body_detail">
+  <p class="note-scroll">Streaming {{ anime.title}} Sub Indo, {{ anime.title}} resolusi 240p 360p 480p 720p 1080p format
+    Mp4 dan Mkv Sub
+    Indo, Download {{ anime.title }} Sub indo, Nonton {{ anime.title }}, Download dan Streaming {{ anime.title }}
+    Subtitle Indonesia, {{ anime.title }} Episode 1 - {{ anime.episode }}(End) Sub Indo, {{ anime.title }} Subtitle
+    Indonesia</p>
+  <div class="help">
+    <h4>Sedikit Bantuan :</h4>
+    <ul>
+      <li><a href="#">Cara Download di Otaku Desu</a></li>
+      <li><a href="#">Link Rusak/Streaming Error silahkan Komentar langsung atau Report disini.</a></li>
+      <li><a href="#">Jika Mirror Streaming/Link Download error silahkan gunakan mirror lain yang masih aktif</a></li>
+      <li><a href="#">Postingan (Lengkap) cuman untuk link download saja</a></li>
+    </ul>
+  </div>
+  <div class="share">
+    <p>Jangan Lupa Bantu Share Anime {{ anime.title }} Subtitle Indonesia ke teman kalian ya.</p>
+
+    <!-- Facebook -->
+    <div class="card w-75 mb-3 fc">
+      <div class="card-body">
+        <a class="card-title"><i class="fa-brands fa-square-facebook"></i> Facebook</a><br>
+        <button>Share Now</button>
+      </div>
+    </div>
+    <!-- X -->
+    <div class="card w-75 mb-3 x">
+      <div class="card-body">
+        <a class="card-title"><i class="fa-brands fa-x-twitter"></i></a><br>
+        <button>Share Now</button>
+      </div>
+    </div>
+    <!-- Instagram -->
+    <div class="card w-75 mb-3 ig">
+      <div class="card-body">
+        <a class="card-title"><i class="fa-brands fa-square-instagram"></i> Instagram</a><br>
+        <button>Share Now</button>
+      </div>
+    </div>
+    <!-- Tiktok -->
+    <div class="card w-75 mb-3 tt">
+      <div class="card-body">
+        <a class="card-title"><i class="fa-brands fa-tiktok"></i> Tiktok</a><br>
+        <button>Share Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="anime_req">
+    <div class="anime-related row">
+      <h3>Rekomendasi anime lainnya</h3>
+      {% for related_anime in anime_list %}
+
+      <div class="col-6 col-md-2 anime-related-card position-relative">
+        <a href="{% url 'anime_detail' pk=related_anime.pk %}" class="position-relative"><img
+            src="{{ related_anime.image.url }}" alt="{{ related_anime.title }} Image" width="200">
+          <p class="position-absolute align-middle related-judul">{{ related_anime.title|truncatewords:3 }}</p>
+        </a>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

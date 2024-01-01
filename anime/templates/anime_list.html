@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="list-body">
+    <div class="container">
+        <h3>Anime List</h3>
+        <!-- Button list -->
+        <div id="alphabet-buttons">
+            {% for letter, _ in sorted_anime_list %}
+                <a href="#" class="alphabet-button" data-letter="{{ letter }}">{{ letter }}</a>
+            {% endfor %}
+        </div>
+        <div id="anime-list">
+            {% for letter, anime_list in sorted_anime_list %}
+                <div class="anime-group" id="anime-group-{{ letter }}">
+                    <h2>{{ letter }}</h2>
+                    <ul>
+                        {% for anime in anime_list %}
+                            <li><a href="{% url 'anime_detail' pk=anime.pk %}">{{ anime.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var alphabetButtons = document.querySelectorAll('.alphabet-button');
+    
+    alphabetButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var letter = this.getAttribute('data-letter');
+            showAnimeGroup(letter);
+        });
+    });
+
+    function showAnimeGroup(letter) {
+        var animeGroups = document.querySelectorAll('.anime-group');
+        animeGroups.forEach(function(group) {
+            group.style.display = 'none';
+        });
+
+        if (letter === '#') {
+            animeGroups.forEach(function(group) {
+                group.style.display = 'block';
+            });
+        } else {
+            var targetGroup = document.getElementById('anime-group-' + letter);
+            if (targetGroup) {
+                targetGroup.style.display = 'block';
+            }
+        }
+    }
+});
+</script>
+
+{% endblock %}

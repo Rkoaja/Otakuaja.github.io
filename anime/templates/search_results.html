@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="content row">
+    <div class="anime col-md-7">
+        {% if results %}
+        <div class="title-result">
+            <h3>Hasil Pencarian Terkait "{{ query }}"</h3>
+        </div>
+        <div class="anime-result row">
+            {% for anime in results %}
+            <div class="col-12 col-md-6 card-anime">    
+                <div class="row anime-card">
+                    <div class="card-img col">
+                        <img src="{{ anime.image.url }}" alt="{{ anime.title }} Image" width="150">
+                    </div>
+                    <div class="card-detail col-md-6 col-8">
+                        <h5 class="card-title"><a href="{% url 'anime_detail' pk=anime.pk %}"><strong>{{ anime.title }}</strong></a></h5>
+                        <p><strong>Genres</strong> : {{ anime.genre }}<br>
+                            <strong>Status</strong> : {{ anime.status }}<br>
+                            <strong>Rating</strong> : {{ anime.rating }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% else %}
+
+        <p>Tidak ada hasil.</p>
+
+        {% endif %}
+    </div>
+
+    <div class="col-md-4 dev-info">
+        <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
+            <h4 class="uk-card-title">Sukai Halamannya yaa!!</h4>
+        </div>
+        <div class="uk-card profile col">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <img src="{% static 'images/pp.jpeg' %}" alt="Example Image" class="col" width="60" height="60">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Riko Saputra</h3>
+                        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">Juni 06,
+                                2006</time></p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <p>Orang saya sukak kok, apa yang salah?</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

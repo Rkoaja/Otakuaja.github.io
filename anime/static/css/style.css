@@ -1,0 +1,481 @@
+*, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.head {
+    background-color: rgb(40, 40, 40);
+}
+
+
+.head .container .menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+    font-size: 1.1rem;
+}
+.head .container .menu a:hover {
+    background-color: #00BFFF;
+}
+
+.container {
+    border-bottom: 8px solid #00BFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.container h1 {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+}
+
+.container h1 span {
+    color: #00BFFF;
+}
+
+.container p {
+    color: #bbeeff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    background-color: black;
+    margin-top: 10px;
+    padding: 20px;
+    color: #fff;
+    border-bottom: 8px solid #00BFFF;
+}
+
+.content h1 {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+.content h1 span {
+    color: #00BFFF;
+}
+
+.content .uk-button {
+    background-color: #5500df;
+    padding: 5px;
+}
+
+.content a {
+    color: #fff;
+}
+
+.content .profile {
+    margin: 15px;
+    height: 200px;
+    background-image: url("/static/images/bg.jpeg");
+    background-size: cover;
+}
+
+.content .profile h3 {
+    color: #eae7e7;
+}
+
+.content .anime .list {
+    margin-bottom: 30px;
+    z-index: +9;
+}
+.content .anime .list a {
+    color: #fff;
+}
+
+.content .anime_list .col-4 a img {
+    margin: 10px;
+    position: relative;
+}
+
+.content .anime .anime_list a .judul {
+    bottom: -120px;
+    text-align: center;
+    height: 50px;
+    background-color: rgba(40, 39, 39, 0.384);
+    left: 0;
+    right: 0;
+    transition: .2s;
+}
+.content .anime .anime_list a .eps {
+    width: 120px;
+    top: -110px;
+    text-align: center;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.384);
+    padding-left: 5px;
+    transition: 0.2s;
+}
+
+.content .anime .anime_list a .rating {
+    top: -50px;
+    text-align: center;
+    height: 30px;
+    background-color: rgba(0, 21, 255, 0.384);
+    right: 5px;
+    transition: .2s;
+    padding-right: 8px;
+    padding-left: 5px;
+    border-radius: 4px;
+}
+
+.content .anime .anime_list a:hover{
+    color: #fff;
+}
+.content .anime .anime_list a:hover .judul {
+    height: 70px;
+}
+.content .anime .anime_list a:hover .eps {
+    width: 150px;
+    height: 40px;
+}
+
+footer {
+    background-color: black;
+    color: #eaeaea;
+    padding: 10px;
+}
+
+.dev-info {
+    background-color: rgb(22, 22, 22);
+}
+
+.dev-info .uk-card {
+    margin-top: 15px;
+}
+
+.dev-info .profile .uk-card-body {
+    padding-top: 0;
+    padding: 15px;
+}
+
+footer h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+footer p {
+    border-top: 5px solid #535353d0;
+}
+
+.credit {
+    font-size: 1rem;
+    background-color: black;
+    text-align: center;
+    color: #fff;
+    margin-bottom: -20px;
+    padding: 5px;
+}
+.credit a {
+    color: #eaeaea;
+    font-weight: 700;
+}
+
+/* Anime Result */
+
+.content .anime {
+    background-color: rgb(22, 22, 22);
+}
+
+.content .anime .title-result h3 {
+    color: #fff;
+    text-align: center;
+    border-bottom: 3px solid #00BFFF;
+    background-color: rgb(40, 40, 40);
+    padding: 5px;
+    font-weight: 300;
+}
+
+.content .anime .anime-result .card-anime {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.content .anime .anime-result .card-anime .anime-card .card-img img {
+    border: 2px double #eae7e7;
+}
+.content .anime .anime-result .card-anime .card-detail {
+    margin-top: 5px;
+    line-height: 1.6;
+}
+.content .anime .anime-result .card-anime .card-detail p {
+    margin-top: 8px;
+}
+.content .anime .anime-result .card-anime .card-detail .card-title a {
+    font-size: 1.2rem;
+    color: #f3f3f3;
+}
+
+/* Anime detail */
+
+.detail {
+    display: grid;
+    grid-template-areas: "img detail";
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto;
+    background-color: rgb(22, 22, 22);
+}
+
+.detail .anime-img img {
+    grid-area: img;
+    margin: 20px 0px 10px 10px;
+    border: 3px double #eae7e7;
+}
+
+.detail .anime-detail {
+    grid-area: detail;
+    margin: 10px auto 10px 5px;
+}
+.detail .anime-detail p {
+    grid-area: detail;
+    color: #eae7e7;
+    margin: 10px auto 10px 5px;
+    display: grid;
+    grid-template-columns: max-content auto;
+    column-gap: 10px;
+}
+
+.anime-episode {
+    background-color: black;
+}
+
+.anime-episode h5 {
+    background-color: #5500df;
+    font-weight: bold;
+    color: #eaeaea;
+    margin-bottom: 0;
+    padding: 5px 5px 5px 10px;
+}
+.anime-episode h5 span {
+    color: black;
+}
+.anime-episode p {
+    margin: 0px;
+    padding: 5px;
+}
+/* Ganjil */
+.anime-episode .odd {
+    background-color: rgb(35, 35, 35);
+}
+/* Genap */
+.anime-episode .even {
+    background-color: rgb(18, 18, 18);
+}
+
+.anime-episode p a {
+    margin-left: 5px;
+    color: #eae7e7;
+}
+
+/* Footer detail */
+.body_detail {
+    padding: 5px;
+    background-color: black;
+}
+.body_detail .note-scroll {
+    color: #eae7e7;
+    border: 3px solid #00BFFF;
+    font-size: 16px;
+    padding: 0px 5px 1px 5px;
+    height: 30px;
+    overflow-y: scroll;
+}
+
+/* Help */
+.body_detail .help {
+    padding: 15px;
+    margin: 5px;
+    background-color: #ae79f8;
+    color: #eae7e7;   
+}
+.body_detail .help h4 {
+    color: #eae7e7;
+}
+.body_detail .help ul li a {
+    color: #eae7e7;
+}
+
+/* Share */
+.body_detail .share {
+    display: grid;
+    grid-template-areas: "share share share share share"
+    "facebook x instagram tiktok none";
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.body_detail .share p {
+    color: black;
+    background-color: #cecece;
+    padding: 10px;
+    margin: 20px 5px 5px 5px;
+    border-radius: 4px;
+    font-weight: 500;
+    grid-area: share;
+}
+.body_detail .share .fc {
+    grid-area: facebook;
+}
+.body_detail .share .x {
+    grid-area: x;
+}
+.body_detail .share .ig {
+    grid-area: instagram;
+}
+.body_detail .share .tt {
+    grid-area: tiktok;
+}
+.body_detail .share .card {
+    border-radius: 0px;
+    margin: 5px 5px 5px 10px;
+    transition: all .2s;
+}
+
+.body_detail .share .card .card-body button {
+    border: none;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+}
+
+.body_detail .share .fc:hover {
+    background: #71d5ff;
+}
+.body_detail .share .x:hover {
+    background: #71d5ff;
+}
+.body_detail .share .ig:hover {
+    background: #ff9b9b;
+}
+.body_detail .share .tt:hover {
+    background: #ff9b9b;
+}
+.body_detail .share .card:hover .card-title {
+    color: #eae7e7;
+}
+
+/* req anime */
+.anime_req  {
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+}
+.anime_req .anime-related h3{
+    color: #fff;
+    text-align: center;
+    border-bottom: 3px solid #00BFFF;
+    background-color: rgb(40, 40, 40);
+    font-weight: 300;
+}
+.anime_req .anime-related {
+    margin: auto;
+}
+
+.anime_req .anime-related .anime-related-card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.anime_req .anime-related .anime-related-card .related-judul {
+    bottom: -125px;
+    text-align: center;
+    height: 70px;
+    background-color: rgba(40, 39, 39, 0.384);
+    left: 0;
+    right: 0;
+    transition: .2s;
+    color: #fff;
+}
+.anime_req .anime-related .anime-related-card:hover .related-judul {
+    background-color: rgba(15, 15, 15, 0.674);
+}
+
+/* Page Anime List */
+.list-body {
+    background-color: black;
+    padding: 20px;
+}
+.list-body .container h3 {
+    color: #fff;
+    border-bottom: 3px solid #00BFFF;
+    background-color: rgb(40, 40, 40);
+    padding: 5px;
+}
+
+.list-body .container h2 {
+    color: #eaeaea;
+    border-bottom: 2px solid #00698b;
+}
+.list-body .container ul li {
+    color: gray;
+}
+
+.list-body .container ul li a {
+    color: #eae7e7;
+}
+
+.list-body .container #alphabet-buttons .alphabet-button {
+    border: 1px solid #fff;
+    padding: 0px 7px 0px 7px;
+    color: #eaeaea;
+}
+
+
+/* Tab */
+@media (max-width: 1000px) {
+    .content .anime .anime_list a .eps {
+        top: -100px;
+    }
+    
+    ul .row .card {
+        width: 100%;
+    }
+    .content .anime .anime-result .card-anime .card-detail {
+        font-size: 60%;
+    }
+    .content .anime .anime-result .card-anime .card-detail .card-title a {
+        font-size: 90%;
+    }
+    .detail {
+        grid-template-areas: "img"
+        "detail";
+        grid-template-columns: 100% auto;
+        grid-template-rows: auto;
+    }
+    .detail .anime-img {
+        margin: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+    .content .anime .anime-result .card-anime .card-detail {
+        font-size: 100%;
+    }
+    .content .anime .anime-result .card-anime .card-detail .card-title a {
+        font-size: 100%;
+    }
+    .body_detail .share {
+        display: grid;
+        grid-template-areas: "share share"
+        "facebook x"
+        "instagram tiktok";
+        grid-template-columns: 50% 50%;
+    }
+    .anime_req .anime-related .anime-related-card .related-judul {
+        bottom: -150px;
+        height: 50px;
+        line-height: 1.2;
+    }
+   
+}
+
+@media (max-width: 576px) {
+    .uk-section-secondary .uk-navbar-container .uk-container .uk-navbar-nav .uk-button-group  {
+        display: none;
+    }
+    .anime_req .anime-related .anime-related-card .related-judul {
+        bottom: -110px;
+    }
+}
+
+/* anime detail done, komentar, hosting */
